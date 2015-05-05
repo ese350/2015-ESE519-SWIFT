@@ -1,12 +1,12 @@
 # 2015-ESE519-SWIFT
 
-#1. Basic hacking of Kinect
-##libfreenect
-##OpenNI2
+# Basic hacking of Kinect
+ 1. libfreenect
+ 2.  OpenNI2
 
-#2. Further Application
-##libfreenect + GFreenect + Skeltrack
-##OpenNI2 + NITE 2
+# Further Application
+ 1. linkurlbfreenect + GFreenect + Skeltrack
+ 2. OpenNI2 + NITE 2
 
-#3. Pattern Recognition
-	tracker + pattern recognition
+# Pattern Recognition
+ 1. tracker + pattern recognition
