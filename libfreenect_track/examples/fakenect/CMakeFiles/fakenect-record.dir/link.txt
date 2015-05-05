@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -O2     CMakeFiles/fakenect-record.dir/record.c.o  -o ../bin/fakenect-record -rdynamic ../lib/libfreenect.so.0.5.2 -lm /usr/local/lib/libusb-1.0.so -Wl,-rpath,/home/david/libfreenect/examples/lib:/usr/local/lib: 

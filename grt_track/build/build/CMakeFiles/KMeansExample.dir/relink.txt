@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/KMeansExample.dir/home/david/grt/examples/ClusteringModulesExamples/KMeansExample/KMeansExample.cpp.o  -o CMakeFiles/CMakeRelink.dir/KMeansExample -rdynamic libgrt.so 

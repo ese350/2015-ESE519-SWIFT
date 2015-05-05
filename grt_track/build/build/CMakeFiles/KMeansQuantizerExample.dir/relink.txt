@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/KMeansQuantizerExample.dir/home/david/grt/examples/FeatureExtractionModules/KMeansQuantizerExample/KMeansQuantizerExample.cpp.o  -o CMakeFiles/CMakeRelink.dir/KMeansQuantizerExample -rdynamic libgrt.so 

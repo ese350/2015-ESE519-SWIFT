@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/DecisionTreeExample.dir/home/david/grt/examples/ClassificationModulesExamples/DecisionTreeExample/DecisionTreeExample.cpp.o  -o DecisionTreeExample -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 

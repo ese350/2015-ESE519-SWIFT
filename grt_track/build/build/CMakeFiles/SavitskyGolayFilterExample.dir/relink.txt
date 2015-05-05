@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/SavitskyGolayFilterExample.dir/home/david/grt/examples/PreprocessingModulesExamples/SavitskyGolayFilterExample/SavitskyGolayFilterExample.cpp.o  -o CMakeFiles/CMakeRelink.dir/SavitskyGolayFilterExample -rdynamic libgrt.so 

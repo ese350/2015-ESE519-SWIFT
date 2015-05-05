@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -O2     CMakeFiles/freenect-wavrecord.dir/wavrecord.c.o  -o ../bin/freenect-wavrecord -rdynamic ../lib/libfreenect.so.0.5.2 /usr/local/lib/libusb-1.0.so -Wl,-rpath,/home/david/libfreenect/examples/lib:/usr/local/lib: 

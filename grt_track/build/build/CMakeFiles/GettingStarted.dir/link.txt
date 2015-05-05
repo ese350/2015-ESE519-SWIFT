@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/GettingStarted.dir/home/david/grt/examples/Tutorials/GettingStarted/GettingStarted.cpp.o  -o GettingStarted -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 

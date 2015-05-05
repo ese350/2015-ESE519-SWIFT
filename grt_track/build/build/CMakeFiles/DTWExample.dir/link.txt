@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/DTWExample.dir/home/david/grt/examples/ClassificationModulesExamples/DTWExample/DTWExample.cpp.o  -o DTWExample -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 

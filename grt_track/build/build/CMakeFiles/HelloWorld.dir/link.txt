@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/HelloWorld.dir/home/david/grt/examples/Tutorials/HelloWorld/HelloWorld.cpp.o  -o HelloWorld -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 

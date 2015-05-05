@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/SVMExample.dir/home/david/grt/examples/ClassificationModulesExamples/SVMExample/SVMExample.cpp.o  -o SVMExample -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 

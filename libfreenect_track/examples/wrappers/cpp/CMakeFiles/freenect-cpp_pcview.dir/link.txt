@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O2     CMakeFiles/freenect-cpp_pcview.dir/cpp_pc_view.cpp.o  -o ../../bin/freenect-cpp_pcview -rdynamic ../../lib/libfreenect.so.0.5.2 -lGLU -lGL -lSM -lICE -lX11 -lXext -lglut -lXmu -lXi -lpthread -lm /usr/local/lib/libusb-1.0.so -Wl,-rpath,/home/david/libfreenect/examples/lib:/usr/local/lib: 

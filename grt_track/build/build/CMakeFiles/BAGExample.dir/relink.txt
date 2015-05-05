@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/BAGExample.dir/home/david/grt/examples/ClassificationModulesExamples/BAGExample/BAGExample.cpp.o  -o CMakeFiles/CMakeRelink.dir/BAGExample -rdynamic libgrt.so 

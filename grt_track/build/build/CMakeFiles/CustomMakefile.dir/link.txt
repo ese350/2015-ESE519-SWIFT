@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/CustomMakefile.dir/home/david/grt/examples/Tutorials/CustomMakefile/main.cpp.o  -o CustomMakefile -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 

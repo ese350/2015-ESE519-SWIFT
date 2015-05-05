@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -O2     CMakeFiles/freenect-regtest.dir/regtest.c.o  -o ../bin/freenect-regtest -rdynamic ../lib/libfreenect_sync.so.0.5.2 -lpthread -lm ../lib/libfreenect.so.0.5.2 /usr/local/lib/libusb-1.0.so -Wl,-rpath,/home/david/libfreenect/examples/lib:/usr/local/lib: 

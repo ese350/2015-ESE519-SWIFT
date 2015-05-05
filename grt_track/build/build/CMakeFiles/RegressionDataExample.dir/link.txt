@@ -1,0 +1,1 @@
+/usr/bin/c++    -pthread -std=c++11    CMakeFiles/RegressionDataExample.dir/home/david/grt/examples/DatastructuresExamples/RegressionDataExample/RegressionDataExample.cpp.o  -o RegressionDataExample -rdynamic libgrt.so -Wl,-rpath,/home/david/grt/build/build 
