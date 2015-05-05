@@ -1,0 +1,126 @@
+from UserSkeletonData import UserSkeletonData
+
+
+def user_skeleton_data(user):
+    print '================================================================='
+    print 'Head            --> {}  {}  {}'.format(user.head.x, user.head.y,
+                                                user.head.z)
+    print 'Neck            --> {}  {}  {}'.format(user.neck.x, user.neck.y,
+                                                user.neck.z)
+    print 'Left shoulder   --> {}  {}  {}'.format(user.left_shoulder.x,
+                                user.left_shoulder.y, user.left_shoulder.z)
+    print 'Right shoulder  --> {}  {}  {}'.format(user.right_shoulder.x,
+                              user.right_shoulder.y, user.right_shoulder.z)
+    print 'Left Elbow      --> {}  {}  {}'.format(user.left_elbow.x,
+                                      user.left_elbow.y, user.left_elbow.z)
+    print 'Right Elbow     --> {}  {}  {}'.format(user.right_elbow.x,
+                                    user.right_elbow.y, user.right_elbow.z)
+    print 'Left Hand       --> {}  {}  {}'.format(user.left_hand.x,
+                                        user.left_hand.y, user.left_hand.z)
+    print 'Right Hand      --> {}  {}  {}'.format(user.right_hand.x,
+                                      user.right_hand.y, user.right_hand.z)
+    print 'Torso           --> {}  {}  {}'.format(user.torso.x, user.torso.y,
+                                                              user.torso.z)
+    print 'Left Hip        --> {}  {}  {}'.format(user.left_hip.x,
+                                          user.left_hip.y, user.left_hip.z)
+    print 'Right Hip       --> {}  {}  {}'.format(user.right_hip.x,
+                                        user.right_hip.y, user.right_hip.z)
+    print 'Left Knee       --> {}  {}  {}'.format(user.left_knee.x,
+                                        user.left_knee.y, user.left_knee.z)
+    print 'Right Knee      --> {}  {}  {}'.format(user.right_knee.x,
+                                      user.right_knee.y, user.right_knee.z)
+    print 'Left Foot       --> {}  {}  {}'.format(user.left_foot.x,
+                                        user.left_foot.y, user.left_foot.z)
+    print 'Right Foot      --> {}  {}  {}'.format(user.right_foot.x,
+                                      user.right_foot.y, user.right_foot.z)
+    print '================================================================='
+
+
+import sys
+import select
+import tty
+import termios
+import time
+import zmq
+
+class NonBlockingConsole(object):
+
+	def __enter__(self):
+		self.old_settings = termios.tcgetattr(sys.stdin)
+		tty.setcbreak(sys.stdin.fileno())
+		return self
+
+	def __exit__(self, type, value, traceback):
+		termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.old_settings)
+
+	def get_data(self):
+		if select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], []):
+			return sys.stdin.read(1)
+		return False
+
+
+
+with NonBlockingConsole() as nbc:
+	fo = open ("data.txt","wb")
+	user0 = UserSkeletonData()
+	st = user0.st
+	state = "w"
+
+	context = zmq.Context()
+
+	#  Socket to talk to server
+	print("Connecting to hello world server ..." )
+	socket = context.socket(zmq.REQ)
+	socket.connect("tcp://localhost:5555")
+
+	while True:
+		
+		#if nbc.get_data() == '\x1b':  # x1b is ESC
+		#	break
+		#check the input key
+		#if nbc.get_data() == '\x32' :
+		#	state = "s"
+		#	print "recording stop"
+		#elif nbc.get_data() == '\x31' :
+		#	state = "w"
+		#	print "recording"
+
+		st.loop()
+		if st.usersCount() > 0 :	
+			#output to screen or file
+			if state == "init" :
+				print ("INIT",user0.left_hand.x, user0.left_hand.y,user0.left_hand.z)
+			elif state == "w" :
+				print ("RECORDING", user0.left_hand.x, user0.left_hand.y,user0.left_hand.z)
+				fo.write('%.3f ' % user0.left_hand.x);
+				fo.write('%.3f ' % user0.left_hand.y);
+				fo.write('%.3f \n' % user0.left_hand.z);
+
+				print("Sending request ")
+				string = str(user0.left_hand.x) +' ' \
+						+str(user0.left_hand.y) +' ' \
+						+str(user0.left_hand.z)
+				socket.send(string)
+
+				#  Get the reply.
+				message = socket.recv()
+				#print("Received reply " )
+
+			elif state == "s" :
+				print ("STOP", user0.left_hand.x, user0.left_hand.y,user0.left_hand.z)
+				
+#while True:
+#	root.mainloop()
+#	st.loop()
+#	if st.usersCount() > 0 :
+#		user_skeleton_data(user0)
+#		print (user0.left_hand.x, user0.left_hand.y,user0.left_hand.z)
+#		if state == "w" :
+#			fo.write('%.3f ' % user0.left_hand.x);
+#			fo.write('%.3f ' % user0.left_hand.y);
+#			fo.write('%.3f \n' % user0.left_hand.z);
+		#st_sum = st_sum + user0.left_hand.x
+		#i = (i +1) % 2
+	    #if i == 0:
+		#st_avg = st_sum / 2
+		#st_sum = 0.0
