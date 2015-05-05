@@ -1,0 +1,40 @@
+# ignore c stuff
+*.o
+*.ko
+*.cmd
+*.mod.*
+.tmp_versions
+modules.order
+Module.symvers
+#ignore thumbnails created by windows
+Thumbs.db
+#ignore Desktop Service Store files created by mac
+*.DS_Store
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+build
+/results/
